@@ -15,11 +15,21 @@ class Home extends Component {
         </section>
 
         <section className="todos-list" id="todos-list">
-          {this.props.todos.map((item, index) => {
-            return (
-              <TodosItem content={item.content} date={item.date} key={index} />
-            );
-          })}
+          {this.props.todos.length > 0 ? (
+            this.props.todos.map((item, index) => {
+              return (
+                <TodosItem
+                  content={item.content}
+                  date={item.date}
+                  key={index}
+                />
+              );
+            })
+          ) : (
+            <div className="empty-todos">
+              There's nothing here! Add something
+            </div>
+          )}
         </section>
       </div>
     );
