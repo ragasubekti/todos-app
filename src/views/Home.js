@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import TodosItem from "../components/TodosItem";
 import { Link } from "react-router-dom";
 
+import { connect } from "react-redux";
 class Home extends Component {
   render() {
     return (
@@ -14,15 +15,19 @@ class Home extends Component {
         </section>
 
         <section className="todos-list" id="todos-list">
-          <TodosItem content="Title" date="now" />
-          <TodosItem content="Title" date="now" />
-          <TodosItem content="Title" date="now" />
-          <TodosItem content="Title" date="now" />
-          <TodosItem content="Title" date="now" />
+          {this.props.todos.map((item, index) => {
+            return (
+              <TodosItem content={item.content} date={item.date.toString()} />
+            );
+          })}
         </section>
       </div>
     );
   }
 }
 
-export default Home;
+const mapStateToProps = state => {
+  return { todos: state.todos };
+};
+
+export default connect(mapStateToProps)(Home);
