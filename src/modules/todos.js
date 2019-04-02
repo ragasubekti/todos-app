@@ -26,9 +26,18 @@ export default function(state = initialState, action) {
       return {
         ...state
       };
+
+    case TOGGLE_TODOS:
+      return {
+        ...state
+      };
     default:
       return state;
   }
 }
 
 export const addTodos = todos => ({ type: ADD_TODOS, payload: todos });
+
+export const toggleTodos = index => ({ type: TOGGLE_TODOS, payload: index });
+
+export const removeTodos = index => ({ type: REMOVE_TODOS });
