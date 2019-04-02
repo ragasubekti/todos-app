@@ -17,7 +17,7 @@ class Home extends Component {
         <section className="todos-list" id="todos-list">
           {this.props.todos.map((item, index) => {
             return (
-              <TodosItem content={item.content} date={item.date.toString()} />
+              <TodosItem content={item.content} date={item.date} key={index} />
             );
           })}
         </section>

@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrash, faCheck } from "@fortawesome/free-solid-svg-icons";
+import moment from "moment";
 
 class TodosItem extends Component {
   onTodosDone() {
@@ -16,7 +17,9 @@ class TodosItem extends Component {
       <div className="todos-item">
         <div className="todos-content">
           <p className="todos-item-content">{this.props.content}</p>
-          <p className="todos-item-date">{this.props.date}</p>
+          <p className="todos-item-date">
+            {moment(this.props.date).format("dddd, MMMM Do YYYY, h:mm:ss a")}
+          </p>
         </div>
         <div className="todos-action">
           <button className="flat-button" onClick={this.onTodosDone}>
