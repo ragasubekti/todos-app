@@ -5,13 +5,19 @@ body {
     Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
 
-p {
+a,
+p,
+fieldset {
   margin: 0;
   padding: 0;
 }
 
+a {
+  text-decoration: none;
+}
+
 .container {
-  max-width: 800px;
+  max-width: 600px;
   margin: 20px auto;
 }
 
@@ -19,13 +25,23 @@ p {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-bottom: 20px;
 }
 
-.button-add {
+.button {
   padding: 10px 20px;
   border-radius: 5px;
   border: none;
+  font-size: small;
+}
+
+.button-add {
   background: #49c96c;
+  color: #fff;
+}
+
+.button-cancel {
+  background: #f00;
   color: #fff;
 }
 
@@ -35,6 +51,7 @@ p {
   padding: 20px;
   display: flex;
   justify-content: space-between;
+  margin-bottom: 10px;
 }
 
 .todos-item-content {
@@ -65,4 +82,28 @@ p {
 .flat-button {
   background: transparent;
   border: none;
+}
+
+.todos-form fieldset {
+  border: none;
+}
+
+.todos-form fieldset label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.todos-input {
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  resize: none;
+}
+
+.margin-bottom-25 {
+  margin-bottom: 25px;
+}
+
+.margin-top-25 {
+  margin-top: 25px;
 }
